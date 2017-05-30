@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomInfoWindow" customModule="YelpDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="275" height="111"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hd6-5J-CbA">
+                    <rect key="frame" x="5" y="5" width="265" height="101"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ft5-7f-qCw">
+                            <rect key="frame" x="0.0" y="0.0" width="265" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-77-gjr">
+                                    <rect key="frame" x="0.0" y="0.0" width="265" height="30.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="cdT-77-gjr" firstAttribute="top" secondItem="ft5-7f-qCw" secondAttribute="top" id="LM4-kf-MTN"/>
+                                <constraint firstAttribute="bottom" secondItem="cdT-77-gjr" secondAttribute="bottom" id="P73-jz-AYR"/>
+                                <constraint firstAttribute="trailing" secondItem="cdT-77-gjr" secondAttribute="trailing" id="WhU-wT-GQJ"/>
+                                <constraint firstItem="cdT-77-gjr" firstAttribute="leading" secondItem="ft5-7f-qCw" secondAttribute="leading" id="oXF-bN-4n5"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-xN-MC0">
+                            <rect key="frame" x="0.0" y="55" width="265" height="20.5"/>
+                            <subviews>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ld-YN-3jK" customClass="CosmosView" customModule="Cosmos">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="130" id="dTI-aC-315"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                            <real key="value" value="3.7000000000000002"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5cl-r1-Ydp">
+                                    <rect key="frame" x="135" y="0.0" width="130" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB4-rR-C7s">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="zB4-rR-C7s" firstAttribute="leading" secondItem="5cl-r1-Ydp" secondAttribute="leading" id="N0f-05-7GN"/>
+                                        <constraint firstItem="zB4-rR-C7s" firstAttribute="top" secondItem="5cl-r1-Ydp" secondAttribute="top" id="RAp-ph-Pex"/>
+                                        <constraint firstAttribute="trailing" secondItem="zB4-rR-C7s" secondAttribute="trailing" id="W5W-Qz-BCw"/>
+                                        <constraint firstAttribute="bottom" secondItem="zB4-rR-C7s" secondAttribute="bottom" id="ZKo-xe-BPG"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRv-R4-CoR">
+                            <rect key="frame" x="0.0" y="80.5" width="265" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-id-tWG">
+                                    <rect key="frame" x="0.0" y="0.0" width="265" height="30.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="eRK-id-tWG" secondAttribute="trailing" id="9KN-wH-xgM"/>
+                                <constraint firstItem="eRK-id-tWG" firstAttribute="leading" secondItem="FRv-R4-CoR" secondAttribute="leading" id="CpG-kJ-ygb"/>
+                                <constraint firstItem="eRK-id-tWG" firstAttribute="top" secondItem="FRv-R4-CoR" secondAttribute="top" id="YOM-aS-qhT"/>
+                                <constraint firstAttribute="bottom" secondItem="eRK-id-tWG" secondAttribute="bottom" id="svl-7n-5qr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Hd6-5J-CbA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="DRj-BY-Boj"/>
+                <constraint firstAttribute="bottom" secondItem="Hd6-5J-CbA" secondAttribute="bottom" constant="5" id="J5c-qT-EeL"/>
+                <constraint firstAttribute="trailing" secondItem="Hd6-5J-CbA" secondAttribute="trailing" constant="5" id="dsN-Ut-Vqp"/>
+                <constraint firstItem="Hd6-5J-CbA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="rJa-JE-2AS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addressLabel" destination="eRK-id-tWG" id="cA3-n1-2xC"/>
+                <outlet property="nameLabel" destination="cdT-77-gjr" id="Iod-qd-ZNT"/>
+                <outlet property="ratingLabel" destination="zB4-rR-C7s" id="dXq-ae-FxS"/>
+                <outlet property="ratingStarsView" destination="9ld-YN-3jK" id="h41-2J-K7Y"/>
+            </connections>
+            <point key="canvasLocation" x="57.5" y="34.5"/>
+        </view>
+    </objects>
+</document>

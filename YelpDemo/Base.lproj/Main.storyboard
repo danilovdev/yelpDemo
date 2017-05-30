@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yWN-Q2-Q83">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Restaurants List-->
+        <scene sceneID="cJo-3t-2Ib">
+            <objects>
+                <viewController id="ZR6-Om-lMR" customClass="MapViewController" customModule="YelpDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ui0-se-sox"/>
+                        <viewControllerLayoutGuide type="bottom" id="uhr-Ur-S8d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Vy-PB-4TG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fp6-eY-r1j" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1KA-tG-CgD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xY9-EY-8T4">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="29"/>
+                                        <segments>
+                                            <segment title="Normal"/>
+                                            <segment title="Terrain"/>
+                                            <segment title="Hybrid"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="mapTypeChanged:" destination="ZR6-Om-lMR" eventType="valueChanged" id="22k-dp-tGT"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xY9-EY-8T4" firstAttribute="top" secondItem="1KA-tG-CgD" secondAttribute="top" id="346-FI-R7Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="xY9-EY-8T4" secondAttribute="trailing" constant="8" id="EYd-TG-lXu"/>
+                                    <constraint firstItem="xY9-EY-8T4" firstAttribute="leading" secondItem="1KA-tG-CgD" secondAttribute="leading" constant="8" id="gxw-co-OtZ"/>
+                                    <constraint firstAttribute="height" constant="44" id="jrq-1S-ZlW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1KA-tG-CgD" firstAttribute="top" secondItem="ui0-se-sox" secondAttribute="bottom" id="8I8-OS-lA2"/>
+                            <constraint firstItem="Fp6-eY-r1j" firstAttribute="leading" secondItem="9Vy-PB-4TG" secondAttribute="leading" id="HEL-rU-dNP"/>
+                            <constraint firstItem="1KA-tG-CgD" firstAttribute="leading" secondItem="9Vy-PB-4TG" secondAttribute="leading" id="Nxv-B7-IGa"/>
+                            <constraint firstItem="Fp6-eY-r1j" firstAttribute="top" secondItem="1KA-tG-CgD" secondAttribute="bottom" id="Vqk-RV-6ft"/>
+                            <constraint firstItem="uhr-Ur-S8d" firstAttribute="top" secondItem="Fp6-eY-r1j" secondAttribute="bottom" id="VrX-dO-AIQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Fp6-eY-r1j" secondAttribute="trailing" id="aHq-aa-yNd"/>
+                            <constraint firstAttribute="trailing" secondItem="1KA-tG-CgD" secondAttribute="trailing" id="xAR-kF-orA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Restaurants List" id="NbA-IY-I0W">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Ydb-Yg-Xzs">
+                            <connections>
+                                <action selector="refreshButtonTapped:" destination="ZR6-Om-lMR" id="3zb-cf-ac2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Fp6-eY-r1j" id="s8d-2a-jqx"/>
+                        <outlet property="segmentedContainer" destination="1KA-tG-CgD" id="ufS-Jr-BKh"/>
+                        <outlet property="segmentedControl" destination="xY9-EY-8T4" id="maw-T2-6Za"/>
+                        <segue destination="LqT-8K-OuZ" kind="show" identifier="ShowRestaurantDetail" id="c6q-r1-JpF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skl-gZ-kth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-391.19999999999999" y="143.47826086956522"/>
+        </scene>
+        <!--Restaurant Details-->
+        <scene sceneID="cx4-KT-gef">
+            <objects>
+                <viewController id="LqT-8K-OuZ" customClass="RestaurantDetailViewController" customModule="YelpDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qUd-0R-sxe"/>
+                        <viewControllerLayoutGuide type="bottom" id="i3y-04-W5y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o6c-4f-hU8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-gH-Y7A">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-d9-Xzi" customClass="ContainerStackView" customModule="YelpDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="115" width="375" height="200"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hTM-d9-Xzi" secondAttribute="trailing" id="2AI-C3-KI2"/>
+                                    <constraint firstItem="hTM-d9-Xzi" firstAttribute="leading" secondItem="9b6-gH-Y7A" secondAttribute="leading" id="Ugl-53-5bK"/>
+                                    <constraint firstAttribute="bottom" secondItem="hTM-d9-Xzi" secondAttribute="bottom" id="suO-NO-J0N"/>
+                                    <constraint firstItem="hTM-d9-Xzi" firstAttribute="top" secondItem="9b6-gH-Y7A" secondAttribute="top" id="tqr-fT-2ZZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9b6-gH-Y7A" firstAttribute="top" secondItem="qUd-0R-sxe" secondAttribute="bottom" id="6aD-br-qKv"/>
+                            <constraint firstItem="i3y-04-W5y" firstAttribute="top" secondItem="9b6-gH-Y7A" secondAttribute="bottom" id="NLU-4z-PaO"/>
+                            <constraint firstItem="hTM-d9-Xzi" firstAttribute="width" secondItem="o6c-4f-hU8" secondAttribute="width" id="bYc-yE-pPb"/>
+                            <constraint firstItem="9b6-gH-Y7A" firstAttribute="leading" secondItem="o6c-4f-hU8" secondAttribute="leading" id="nE6-b4-EhI"/>
+                            <constraint firstAttribute="trailing" secondItem="9b6-gH-Y7A" secondAttribute="trailing" id="zxg-SN-Tch"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Restaurant Details" id="Bce-5z-5L1"/>
+                    <connections>
+                        <outlet property="containerStackView" destination="hTM-d9-Xzi" id="xa9-TH-6Gt"/>
+                        <outlet property="scrollView" destination="9b6-gH-Y7A" id="j21-iK-IKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jV-iC-wDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637.60000000000002" y="142.1289355322339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uZX-mf-Yxz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWN-Q2-Q83" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kz5-7u-FOE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZR6-Om-lMR" kind="relationship" relationship="rootViewController" id="3C9-fo-RdD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EfD-Dn-Jt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1330.4000000000001" y="143.47826086956522"/>
+        </scene>
+    </scenes>
+</document>
